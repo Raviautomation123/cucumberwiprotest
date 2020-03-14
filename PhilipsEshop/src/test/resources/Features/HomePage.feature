@@ -1,3 +1,4 @@
+@Sanity
 Feature: Home page functionality for Eshoop
 
   Scenario: Verification of Home page
