@@ -1,11 +1,14 @@
 package com.philips.StepDefinition;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import com.philips.Utility.java.Base;
 
+import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -43,7 +46,7 @@ public class Steps extends Base {
     {    		
         System.out.println("Verify the title page");					
     }	
-// Parameterized user value
+/*// Parameterized user value
     
     @Then("^Enter the \"(.*)\" and \"(.*)\"$")
     public void enter_the_username_and_password(String usename, String password)  {
@@ -51,7 +54,40 @@ public class Steps extends Base {
     	driver.findElement(By.xpath("Username")).sendKeys("usename");
     	driver.findElement(By.xpath("Pass")).sendKeys("password");
          }
+*/
 
+    ////////  data driven  approch
+    
+// Parameterized user value  login senaros
+    
+  /*  @Then("^Enter the usename and password $")
+    public void enter_the_username_and_password(DataTable credencials)  {
+    	
+    	List<List<String>> data = credencials.raw();
+    	
+    	driver.findElement(By.xpath("Username")).sendKeys(data.get(0).get(0));
+    	
+    	driver.findElement(By.xpath("Pass")).sendKeys(data.get(0).get(1));
+         }
+    
+    
+    @Then("^Then eneter the registration details $")
+    public void Then_eneter_the_registration_details(DataTable register)  {
+    	
+    	List<List<String>> data = register.raw();
+    	
+    	driver.findElement(By.xpath("Fname")).sendKeys(data.get(0).get(0));    	
+    	driver.findElement(By.xpath("Lname")).sendKeys(data.get(0).get(1));    	
+    	driver.findElement(By.xpath("Email")).sendKeys(data.get(0).get(2));
+    	driver.findElement(By.xpath("MobileNo")).sendKeys(data.get(0).get(3));
+         }
+    
+  */  
+    
+    
+    
+    
+    
     @Then("^click the submit button$")
     public void click_the_submit_button()  {
     	driver.close(); 
